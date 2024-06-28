@@ -7,11 +7,20 @@ maintainer:      ssouthcity@gmail.com
 build-type:      Simple
 
 common warnings
-    ghc-options: -Wall
+  ghc-options: -Wall
+
+library
+  import:             warnings
+  exposed-modules:    Solution
+                    , Days.Day01
+                    , Days.Day02
+  build-depends:      base
+  hs-source-dirs:     src
+  default-language:   Haskell2010
 
 executable main
     import:           warnings
     main-is:          Main.hs
-    build-depends:    base
-    hs-source-dirs:   src
+    build-depends:    base, aoc2023
+    hs-source-dirs:   app
     default-language: Haskell2010
